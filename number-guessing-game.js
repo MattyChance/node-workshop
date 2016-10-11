@@ -9,9 +9,15 @@ var guessingCount = 0;
 function guessingGame() {
     guessingCount += 1;
     
+     if (guessingCount === 4) {
+        console.log('You lost! No more chance to guess');
+        return;
+    }
+    
+    
     prompt.get('guess a number!', function(err, input) {
         if (err) {
-            console.log(err);
+            console.log('There an error');
         }
         else {
 
@@ -34,9 +40,7 @@ function guessingGame() {
 
     })
        
-    if (guessingCount === 4) {
-        console.log('You lost! No more chance to guess');
-    }
+   
 }
 
 guessingGame();
